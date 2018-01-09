@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Astro Weight Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+     <!-- Write your markup here  -->
+    <div class="container is-fluid">
+
+    <h1 class="has-text-primary subtitle is-1">Astral Weight Calculator</h1>
+
+      <div class="box">
+        <div class="field">
+          <label class="label">Weight</label>
+          <div class="control">
+            <input id="user-weight" type="number" placeholder="Weight (lbs)" class="input"/>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Planets</label>
+          <p class="control has-icons-left">
+            <span class="select">
+              <select id="planets">
+                <option>Planet</option>
+              </select>
+            </span>
+            <span class="icon is-left">
+                <i class="fa fa-globe"></i>
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="field">
+          <label class="label">Options</label>
+          <input id="pluto-checkbox" type="checkbox" checked onclick="plutoToggleVisibility()" class="checkbox"/>
+          <label for="pluto-checkbox">Is Pluto a planet?</label>
+      </div>
+      <div class="field">
+          <input id="planets-checkbox" type="checkbox" onclick="planetToggleVisibility()" class="checkbox"/>
+          <label for="planets-checkbox">Add custom planets?</label>
+      </div>
+  
+        <div id="custom-section" class="field">
+          <input id="planet-name" type="text" placeholder="Planet name" class="input"/>
+          <input id="planet-multiplier" type="number" placeholder="Planet multiplier" class="input"/> 
+
+          <div class="control">
+            <button id="add-planets" onclick="pushCustomPlanet()" class="button is-primary is-outlined">Add Custom Planet</button>
+          </div>
+        </div>
+        
+      <div class="field">
+        <div class="control">
+          <button id="calculate-button" onclick="handleClickEvent()" class="button is-primary is-medium">Calculate Weight</button> 
+        </div>
+      </div>
+
+      <div>
+        <p id="output" class="is-size-3 has-text-centered has-text-grey-darker has-text-weight-semibold"></p> 
+      </div>
+    </div>
+
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
